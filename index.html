@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#f8f7f2" />
+		<title>GoodHours | Volunteer dashboard</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="app-shell">
+			<aside class="sidebar" aria-label="Main navigation">
+				<a class="brand" href="#overview" aria-label="GoodHours home">
+					<span class="brand-mark" aria-hidden="true">g</span>
+					<span>goodhours<span class="brand-period">.</span></span>
+				</a>
+				<p class="nav-label">WORKSPACE</p>
+				<nav class="primary-nav">
+					<button class="nav-item is-active" data-view="overview" aria-current="page"><span class="nav-symbol">⌂</span>Overview</button>
+					<button class="nav-item" data-view="log"><span class="nav-symbol">＋</span>Log hours</button>
+					<button class="nav-item" data-view="organizations"><span class="nav-symbol">◎</span>Who we help</button>
+					<button class="nav-item" data-view="guide"><span class="nav-symbol">↗</span>How it works</button>
+				</nav>
+				<div class="sidebar-bottom">
+					<div class="sidebar-note"><span class="note-spark">✳</span><p>Small acts add up.<br /><strong>Every hour matters.</strong></p></div>
+					<button class="profile-button" data-open-auth><span class="avatar">G</span><span class="profile-copy"><strong>Your account</strong><small>Sign in to get started</small></span><span class="profile-arrow">↗</span></button>
+				</div>
+			</aside>
+
+			<main class="main-area">
+				<header class="topbar">
+					<div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="current-section">Overview</strong></div>
+					<div class="topbar-actions"><span class="today-label" id="today-label"></span><button class="button button-dark button-small" data-open-auth>Sign in <span aria-hidden="true">↗</span></button></div>
+				</header>
+
+				<div class="page-content">
+					<section class="view is-visible" id="view-overview" aria-labelledby="welcome-title">
+						<div class="welcome-row">
+							  <div><p class="eyebrow"><span class="eyebrow-dot"></span>YOUR VOLUNTEER SPACE</p><h1 id="welcome-title">Good things start<br />with <em>showing up.</em></h1><p class="intro-copy">Keep your service hours in one place and see the difference they make in your community.</p><button class="button button-coral" data-view="log">Log volunteer hours <span aria-hidden="true">↗</span></button></div>
+							  <figure class="welcome-image"><svg class="community-illustration" viewBox="0 0 600 360" role="img" aria-labelledby="community-art-title community-art-description"><title id="community-art-title">Neighbors volunteering together</title><desc id="community-art-description">Three neighbors prepare food and supplies together at a community table.</desc><rect width="600" height="360" fill="#dce5d6"/><circle cx="514" cy="67" r="29" fill="#efc56b"/><path d="M0 224c72-42 122-35 186-5 60 28 102 35 163 7s137-36 251 13v121H0z" fill="#b2c8a9"/><path d="M35 58h142v125H35z" fill="#eef0df"/><path d="M48 72h116v99H48z" fill="#c5d6cf"/><path d="M105 72v99M48 121h116" stroke="#f7f4e9" stroke-width="8"/><path d="M384 58h154v125H384z" fill="#eef0df"/><path d="M398 72h126v99H398z" fill="#c5d6cf"/><path d="M461 72v99M398 121h126" stroke="#f7f4e9" stroke-width="8"/><path d="M92 360v-91c0-29 22-52 49-52s49 23 49 52v91z" fill="#e87a5b"/><circle cx="141" cy="190" r="31" fill="#8a573c"/><path d="M105 189c0-31 18-49 41-49 27 0 38 20 37 43-15-8-37-21-58-9-7 4-12 9-20 15" fill="#312e2b"/><path d="M229 360v-104c0-31 23-56 52-56s52 25 52 56v104z" fill="#506f59"/><circle cx="281" cy="194" r="33" fill="#d89972"/><path d="M247 188c2-31 18-50 43-50 23 0 40 19 39 46-21-3-37-19-47-19-13 0-21 13-35 23" fill="#54392f"/><path d="M380 360v-91c0-29 22-52 49-52s49 23 49 52v91z" fill="#e6b84f"/><circle cx="429" cy="190" r="31" fill="#be7954"/><path d="M397 183c5-28 18-43 40-43 23 0 38 17 35 45-12-4-21-14-32-14-15 0-26 11-43 12" fill="#41322d"/><path d="M73 265h449v24H73z" fill="#8c5d42"/><path d="M105 289h20v71h-20zM470 289h20v71h-20z" fill="#76513e"/><path d="M194 226c13-14 31-14 45 0l35 34-19 19-41-24" fill="#d89972"/><path d="M356 226c-13-14-31-14-45 0l-35 34 19 19 41-24" fill="#be7954"/><rect x="234" y="232" width="91" height="35" rx="4" fill="#f6eee0"/><path d="M249 246h60M249 254h41" stroke="#e2c9a2" stroke-width="4" stroke-linecap="round"/><path d="M53 224c-11-14-13-25-7-34 12 2 21 10 27 24M537 225c11-14 13-25 7-34-12 2-21 10-27 24" fill="#78906c"/><path d="M46 197c-13-5-18-13-17-23 11-2 20 2 28 12M554 198c13-5 18-13 17-23-11-2-20 2-28 12" fill="#91a97f"/></svg><figcaption><span class="image-indicator"></span> COMMUNITY IN ACTION</figcaption></figure>
+						</div>
+
+						<div class="section-heading"><div><p class="eyebrow">YOUR IMPACT</p><h2>A little goes a long way</h2></div><button class="text-button" data-view="log">View activity <span aria-hidden="true">→</span></button></div>
+						<div class="stats-grid" aria-live="polite">
+							<article class="stat-card stat-highlight"><span class="stat-label">HOURS LOGGED</span><div class="stat-value" id="total-hours">0<span> hrs</span></div><p>Time you’ve given back</p><span class="stat-decoration" aria-hidden="true">↗</span></article>
+							<article class="stat-card"><span class="stat-label">ACTIVITIES</span><div class="stat-value" id="activity-count">0</div><p>Moments that made a difference</p><span class="stat-decoration stat-decoration-yellow" aria-hidden="true">✳</span></article>
+							  <article class="stat-card"><span class="stat-label">ENTRIES SAVED</span><div class="stat-value" id="pending-count">0</div><p>Hours saved on this device</p><span class="stat-decoration stat-decoration-green" aria-hidden="true">◷</span></article>
+						</div>
+
+						<div class="lower-grid">
+							<section class="activity-panel" aria-labelledby="activity-title"><div class="panel-heading"><div><p class="eyebrow">RECENT CONTRIBUTIONS</p><h2 id="activity-title">Your activity</h2></div><button class="icon-button" aria-label="Go to log hours" data-view="log">＋</button></div><div id="activity-list" class="activity-list"><div class="empty-state"><span class="empty-icon">↗</span><div><strong>Your story starts here</strong><p>Log your first volunteer shift to see it here.</p></div><button class="text-button" data-view="log">Add hours →</button></div></div></section>
+							<aside class="next-step"><span class="next-step-tag">A GOOD PLACE TO START</span><h2>Make your next hour count.</h2><p>See the groups we support and the different ways your time can help.</p><button class="button button-light" data-view="organizations">Meet the community <span aria-hidden="true">→</span></button><span class="next-step-mark" aria-hidden="true">g.</span></aside>
+						</div>
+						<footer class="page-footer"><span>GOODHOURS <span class="brand-period">●</span> COMMUNITY, COUNTED.</span><span>Made for the hours that matter.</span></footer>
+					</section>
+
+					<section class="view" id="view-log" aria-labelledby="log-title" hidden>
+						<div class="view-header"><p class="eyebrow"><span class="eyebrow-dot"></span>YOUR CONTRIBUTION</p><h1 id="log-title">Log your <em>hours.</em></h1><p class="intro-copy">Add a shift to your activity record. Your entries stay on this device in this demo.</p></div>
+						<div class="form-layout"><form id="hours-form" class="hours-form"><div class="form-heading"><span class="form-step">01</span><div><h2>Tell us about your time</h2><p>Fields marked with <span aria-hidden="true">*</span> are required.</p></div></div><label for="activity-name">Activity or organization <span>*</span></label><input id="activity-name" name="activity" type="text" placeholder="e.g. Neighborhood food drive" required maxlength="80" /><div class="form-row"><div><label for="activity-date">Date <span>*</span></label><input id="activity-date" name="date" type="date" required /></div><div><label for="activity-hours">Hours <span>*</span></label><input id="activity-hours" name="hours" type="number" min="0.25" max="24" step="0.25" placeholder="2.5" required /></div></div><label for="activity-notes">What did you work on? <span class="optional-label">OPTIONAL</span></label><textarea id="activity-notes" name="notes" rows="4" maxlength="300" placeholder="Share a few details about your contribution..."></textarea><div class="form-actions"><button class="button button-coral" type="submit">Save activity <span aria-hidden="true">↗</span></button><span class="privacy-note">Saved privately in your browser</span></div></form><aside class="form-aside"><span class="aside-icon">✳</span><p class="eyebrow">A QUICK NOTE</p><h2>Keep it honest<br />and specific.</h2><p>Add the date, organization, and time you actually volunteered. Your entries are personal records and are not verified or submitted to an organization in this prototype.</p><button class="text-button" data-view="guide">See how it works →</button></aside></div>
+						<footer class="page-footer"><span>GOODHOURS <span class="brand-period">●</span> COMMUNITY, COUNTED.</span><span>Made for the hours that matter.</span></footer>
+					</section>
+
+					<section class="view" id="view-organizations" aria-labelledby="organizations-title" hidden>
+						<div class="view-header"><p class="eyebrow"><span class="eyebrow-dot"></span>OUR COMMUNITY</p><h1 id="organizations-title">Who we <em>help.</em></h1><p class="intro-copy">A community is made up of all kinds of people and groups. Your time can help each of them thrive.</p></div>
+						<div class="organization-grid" id="organization-grid"></div>
+						<div class="community-note"><span class="community-note-mark">✳</span><div><p class="eyebrow">BETTER, TOGETHER</p><h2>Every community has its own needs.</h2><p>These are starting points, not a complete list. The best way to help is to listen to local organizations and ask what support they need most.</p></div><button class="button button-dark" data-view="log">Log your contribution <span aria-hidden="true">↗</span></button></div>
+						<footer class="page-footer"><span>GOODHOURS <span class="brand-period">●</span> COMMUNITY, COUNTED.</span><span>Made for the hours that matter.</span></footer>
+					</section>
+
+					<section class="view" id="view-guide" aria-labelledby="guide-title" hidden>
+						<div class="view-header"><p class="eyebrow"><span class="eyebrow-dot"></span>THE SIMPLE VERSION</p><h1 id="guide-title">How it <em>works.</em></h1><p class="intro-copy">A straightforward way to keep track of the time you give to your community.</p></div>
+						<div class="guide-layout"><div class="steps-list"><article class="guide-step"><span class="guide-number">01</span><div><h2>Show up and lend a hand</h2><p>Volunteer with a nonprofit, local business, community group, or another cause you care about. Follow their guidance and record the time you actually spend helping.</p></div><span class="guide-arrow">↗</span></article><article class="guide-step"><span class="guide-number">02</span><div><h2>Log your hours</h2><p>Open <strong>Log hours</strong>, enter the activity, date, and time spent, then add a short note if it helps you remember the details.</p></div><span class="guide-arrow">↗</span></article><article class="guide-step"><span class="guide-number">03</span><div><h2>Keep your record close</h2><p>Your entries appear in your dashboard so you can review your activity and total hours. In this starter version, records are stored in your browser only.</p></div><span class="guide-arrow">↗</span></article><article class="guide-step"><span class="guide-number">04</span><div><h2>Need official verification?</h2><p>This prototype does not contact organizations or verify service. Ask the organization, school, or program that needs your record about its accepted proof and approval process.</p></div><span class="guide-arrow">↗</span></article></div><aside class="guide-aside"><span class="guide-aside-icon">⌁</span><p class="eyebrow">READY WHEN YOU ARE</p><h2>Start with one good hour.</h2><p>Your next contribution is only a few details away.</p><button class="button button-coral" data-view="log">Log volunteer hours <span aria-hidden="true">↗</span></button></aside></div>
+						<footer class="page-footer"><span>GOODHOURS <span class="brand-period">●</span> COMMUNITY, COUNTED.</span><span>Made for the hours that matter.</span></footer>
+					</section>
+				</div>
+			</main>
+		</div>
+
+		<div class="modal-backdrop" id="auth-modal" hidden>
+			<section class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title"><button class="modal-close" aria-label="Close sign-in dialog">×</button><a class="brand modal-brand" href="#overview"><span class="brand-mark" aria-hidden="true">g</span><span>goodhours<span class="brand-period">.</span></span></a><p class="eyebrow">YOUR COMMUNITY, IN ONE PLACE</p><h2 id="auth-title">Welcome back.</h2><p class="auth-description" id="auth-description">Sign in to keep your volunteer journey going.</p><button class="provider-button" id="google-signin"><span class="google-mark">G</span>Continue with Google</button><div class="divider"><span>or continue with email</span></div><form id="auth-form"><label for="auth-email">Email address</label><input id="auth-email" type="email" placeholder="you@example.com" autocomplete="email" required /><label for="auth-password">Password</label><input id="auth-password" type="password" minlength="6" placeholder="At least 6 characters" autocomplete="current-password" required /><button class="button button-dark auth-submit" type="submit" id="auth-submit">Sign in <span aria-hidden="true">↗</span></button></form><p class="auth-toggle-copy"><span id="auth-toggle-prompt">New to GoodHours?</span> <button class="inline-button" id="auth-toggle">Create an account</button></p><p class="demo-caption">Demo only. Authentication is not connected.</p></section>
+		</div>
+		<div class="toast" id="toast" role="status" aria-live="polite"></div>
+	</body>
+</html>
